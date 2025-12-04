@@ -1,0 +1,21 @@
+# 70. Climbing Stairs
+# Golden Ratio Sol!!
+# time: O(logn)
+# space: O(1)
+
+import math
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        sqrt5 = math.sqrt(5)
+        phi = (1 + sqrt5) / 2
+        psi = (1 - sqrt5) / 2
+        n += 1
+        return round((phi**n - psi**n) / sqrt5)
+    
+if __name__ == "__main__":
+    sol = Solution()
+
+    n = 5
+
+    print(sol.climbStairs(n))
